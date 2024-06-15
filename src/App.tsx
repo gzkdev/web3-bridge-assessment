@@ -8,7 +8,7 @@ function App() {
   const { income, expenses, addTransaction } = useManageExpenses();
 
   const [transactionType, setTransactionType] =
-    useState<TransactionType>("EXPENSE");
+    useState<TransactionType>("INCOME");
 
   const [transactionAmount, setTransactionAmount] = useState(0);
 
@@ -18,6 +18,9 @@ function App() {
       amount: transactionAmount,
       type: transactionType,
     };
+
+    setTransactionType("INCOME");
+    setTransactionAmount(0);
 
     addTransaction(draft);
   }
