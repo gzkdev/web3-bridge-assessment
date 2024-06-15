@@ -11,6 +11,9 @@ export default function Transactions({
     <div className="transactions">
       <h3>{title}</h3>
       <div>
+        Total: {transactions.reduce((acc, item) => acc + item.amount, 0)}
+      </div>
+      <div>
         {transactions.map((tx, id) => (
           <TransactionItem key={id} transaction={tx} />
         ))}
